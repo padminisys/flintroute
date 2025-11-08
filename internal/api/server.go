@@ -3,6 +3,7 @@ package api
 import (
 	"context"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -140,6 +141,21 @@ func (s *Server) setupRoutes() {
 			})
 		}
 	}
+
+	// Serve static files from frontend/dist
+	s.router.Static("/assets", "./frontend/dist/assets")
+	s.router.StaticFile("/vite.svg", "./frontend/dist/vite.svg")
+
+	// Serve index.html for all non-API routes (SPA fallback)
+	s.router.NoRoute(func(c *gin.Context) {
+		// If it's an API route, return 404 JSON
+		if strings.HasPrefix(c.Request.URL.Path, "/api/") {
+			c.JSON(http.StatusNotFound, gin.H{"error": "endpoint not found"})
+			return
+		}
+		// Otherwise serve the React app
+		c.File("./frontend/dist/index.html")
+	})
 }
 
 // Start starts the HTTP server
