@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  frr:
+    image: frrouting/frr:latest
+    container_name: flintroute-frr
+    privileged: true
+    networks:
+      - flintroute-net
+    ports:
+      - "50051:50051"  # gRPC
+      - "179:179"      # BGP
+    volumes:
+      - ./configs/frr:/etc/frr
+      - frr-data:/var/log/frr
+    command: >
+      sh -c "
+      echo 'Starting FRR with gRPC enabled...' &&
+      /usr/lib/frr/frrinit.sh start &&
+      tail -f /var/log/frr/frr.log
+      "
+    healthcheck:
+      test: ["CMD", "vtysh", "-c", "show version"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+networks:
+  flintroute-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  frr-data:

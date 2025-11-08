@@ -1,0 +1,175 @@
+# FlintRoute .gitignore
+
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+flintroute
+flintroute-*
+
+# Go
+*.test
+*.out
+/vendor/
+go.work
+go.work.sum
+
+# Build artifacts
+/bin/
+/dist/
+/build/
+/out/
+
+# Frontend
+/frontend/node_modules/
+/frontend/dist/
+/frontend/build/
+/frontend/.vite/
+/frontend/.next/
+/frontend/.nuxt/
+/frontend/.cache/
+/frontend/coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# Configuration files (with secrets)
+config.yaml
+config.yml
+config.json
+!config.example.yaml
+!config.example.yml
+!config.example.json
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# Logs
+logs/
+*.log
+/var/log/flintroute/
+
+# Backups
+backups/
+*.backup
+*.bak
+*.old
+
+# Certificates and keys
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+/certs/
+/keys/
+!certs/.gitkeep
+!keys/.gitkeep
+
+# IDE and editors
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+
+# Testing
+/coverage/
+/test-results/
+/.nyc_output/
+/playwright-report/
+/playwright/.cache/
+
+# Temporary files
+/tmp/
+/temp/
+*.tmp
+*.temp
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Kubernetes
+*.kubeconfig
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# Ansible
+*.retry
+
+# Documentation build
+/docs/_build/
+/docs/.doctrees/
+/site/
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# FRR specific
+/frr-data/
+/frr-config/
+!frr-config/.gitkeep
+
+# Development
+.air.toml
+.air.tmp/
+
+# Profiling
+*.prof
+*.pprof
+cpu.prof
+mem.prof
+
+# Security
+secrets/
+*.secret
+.secrets/
+
+# Local development
+.local/
+local/

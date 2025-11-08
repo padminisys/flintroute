@@ -1,0 +1,15 @@
+server:
+  host: 0.0.0.0
+  port: 8080
+
+database:
+  path: ./data/flintroute.db
+
+frr:
+  grpc_host: localhost
+  grpc_port: 50051
+
+auth:
+  jwt_secret: changeme-in-production-use-a-long-random-string
+  token_expiry: 15m
+  refresh_expiry: 168h  # 7 days
