@@ -1,6 +1,8 @@
 package auth
 
 import (
+	"crypto/rand"
+	"encoding/hex"
 	"errors"
 	"time"
 
@@ -57,6 +59,11 @@ func (m *JWTManager) GenerateToken(user *models.User) (string, error) {
 // GenerateRefreshToken generates a new refresh token
 func (m *JWTManager) GenerateRefreshToken(user *models.User) (string, time.Time, error) {
 	expiresAt := time.Now().Add(m.refreshExpiry)
+	
+	// Generate unique token ID to prevent duplicates
+	jti := make([]byte, 16)
+	rand.Read(jti)
+	
 	claims := Claims{
 		UserID:   user.ID,
 		Username: user.Username,
@@ -65,6 +72,7 @@ func (m *JWTManager) GenerateRefreshToken(user *models.User) (string, time.Time,
 			ExpiresAt: jwt.NewNumericDate(expiresAt),
 			IssuedAt:  jwt.NewNumericDate(time.Now()),
 			NotBefore: jwt.NewNumericDate(time.Now()),
+			ID:        hex.EncodeToString(jti),
 		},
 	}
 

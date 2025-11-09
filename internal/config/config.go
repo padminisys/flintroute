@@ -62,6 +62,16 @@ func Load() (*Config, error) {
 	// Enable environment variable override
 	v.SetEnvPrefix("FLINTROUTE")
 	v.AutomaticEnv()
+	
+	// Explicitly bind environment variables for nested keys
+	v.BindEnv("server.host", "FLINTROUTE_SERVER_HOST")
+	v.BindEnv("server.port", "FLINTROUTE_SERVER_PORT")
+	v.BindEnv("database.path", "FLINTROUTE_DATABASE_PATH")
+	v.BindEnv("frr.grpc_host", "FLINTROUTE_FRR_GRPC_HOST")
+	v.BindEnv("frr.grpc_port", "FLINTROUTE_FRR_GRPC_PORT")
+	v.BindEnv("auth.jwt_secret", "FLINTROUTE_AUTH_JWT_SECRET")
+	v.BindEnv("auth.token_expiry", "FLINTROUTE_AUTH_TOKEN_EXPIRY")
+	v.BindEnv("auth.refresh_expiry", "FLINTROUTE_AUTH_REFRESH_EXPIRY")
 
 	// Read config file if it exists
 	if err := v.ReadInConfig(); err != nil {

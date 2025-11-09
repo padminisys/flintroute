@@ -58,15 +58,15 @@ func (s *Server) handleLogin(c *gin.Context) {
 		return
 	}
 
-	// Check if user is active
-	if !user.Active {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "Account is disabled"})
-		return
-	}
-
 	// Verify password
 	if err := bcrypt.CompareHashAndPassword([]byte(user.PasswordHash), []byte(req.Password)); err != nil {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid credentials"})
+		return
+	}
+
+	// Check if user is active (after password verification for security)
+	if !user.Active {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Account is disabled"})
 		return
 	}
 
