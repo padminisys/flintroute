@@ -1,0 +1,6 @@
+type: peer_state_change
+severity: info
+message: "BGP peer 192.168.1.100 is up"
+details: "Peer transitioned from Idle to Established"
+peer_id: 1
+acknowledged: false

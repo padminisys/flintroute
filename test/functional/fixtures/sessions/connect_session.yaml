@@ -1,0 +1,8 @@
+peer_id: 4
+state: Connect
+uptime: 5
+prefixes_received: 0
+prefixes_sent: 0
+messages_received: 2
+messages_sent: 1
+last_error: ""

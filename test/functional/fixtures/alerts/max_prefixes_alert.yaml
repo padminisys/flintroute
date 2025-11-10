@@ -1,0 +1,6 @@
+type: max_prefixes_exceeded
+severity: error
+message: "Peer 192.168.2.100 exceeded max prefixes"
+details: "Received 1001 prefixes, max is 1000"
+peer_id: 2
+acknowledged: false

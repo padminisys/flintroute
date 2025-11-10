@@ -1,0 +1,7 @@
+name: Invalid Multihop Peer
+ip_address: 192.168.7.100
+asn: 65001
+remote_asn: 65009
+description: Peer with invalid multihop
+enabled: true
+multihop: 300

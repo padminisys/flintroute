@@ -1,0 +1,6 @@
+name: Invalid Peer - Negative ASN
+ip_address: 192.168.6.100
+asn: -1
+remote_asn: 65002
+description: Peer with negative ASN
+enabled: true

@@ -1,0 +1,17 @@
+logging:
+  level: debug
+  format: json
+  output:
+    - type: file
+      path: ./logs/test-execution.log
+      max_size: 100  # MB
+      max_backups: 3
+      max_age: 7  # days
+    - type: console
+      format: text
+      
+  components:
+    api_client: debug
+    database: info
+    mock_server: info
+    test_runner: debug

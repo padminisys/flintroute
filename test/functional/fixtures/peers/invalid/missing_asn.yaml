@@ -1,0 +1,5 @@
+name: Invalid Peer - No ASN
+ip_address: 192.168.5.100
+remote_asn: 65002
+description: Peer without ASN
+enabled: true

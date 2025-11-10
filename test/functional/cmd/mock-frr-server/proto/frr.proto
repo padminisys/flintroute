@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package frr;
+
+option go_package = "github.com/yourusername/flintroute/test/functional/cmd/mock-frr-server/proto";
+
+// FRR gRPC service definition
+service FRRService {
+  rpc AddBGPPeer(AddBGPPeerRequest) returns (AddBGPPeerResponse);
+  rpc RemoveBGPPeer(RemoveBGPPeerRequest) returns (RemoveBGPPeerResponse);
+  rpc UpdateBGPPeer(UpdateBGPPeerRequest) returns (UpdateBGPPeerResponse);
+  rpc GetBGPSessionState(GetBGPSessionStateRequest) returns (GetBGPSessionStateResponse);
+  rpc GetAllBGPSessions(GetAllBGPSessionsRequest) returns (GetAllBGPSessionsResponse);
+  rpc GetRunningConfig(GetRunningConfigRequest) returns (GetRunningConfigResponse);
+}
+
+// BGP Peer Configuration
+message BGPPeerConfig {
+  string ip_address = 1;
+  uint32 asn = 2;
+  uint32 remote_asn = 3;
+  string password = 4;
+  int32 multihop = 5;
+  string update_source = 6;
+  string route_map_in = 7;
+  string route_map_out = 8;
+  string prefix_list_in = 9;
+  string prefix_list_out = 10;
+  int32 max_prefixes = 11;
+  int32 local_preference = 12;
+}
+
+// BGP Session State
+message BGPSessionState {
+  string ip_address = 1;
+  string state = 2;
+  int64 uptime = 3;
+  int32 prefixes_received = 4;
+  int32 prefixes_sent = 5;
+  int64 messages_received = 6;
+  int64 messages_sent = 7;
+  string last_error = 8;
+}
+
+// Add BGP Peer
+message AddBGPPeerRequest {
+  BGPPeerConfig config = 1;
+}
+
+message AddBGPPeerResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// Remove BGP Peer
+message RemoveBGPPeerRequest {
+  string ip_address = 1;
+}
+
+message RemoveBGPPeerResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// Update BGP Peer
+message UpdateBGPPeerRequest {
+  BGPPeerConfig config = 1;
+}
+
+message UpdateBGPPeerResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// Get BGP Session State
+message GetBGPSessionStateRequest {
+  string ip_address = 1;
+}
+
+message GetBGPSessionStateResponse {
+  BGPSessionState state = 1;
+}
+
+// Get All BGP Sessions
+message GetAllBGPSessionsRequest {}
+
+message GetAllBGPSessionsResponse {
+  repeated BGPSessionState sessions = 1;
+}
+
+// Get Running Config
+message GetRunningConfigRequest {}
+
+message GetRunningConfigResponse {
+  string config = 1;
+}

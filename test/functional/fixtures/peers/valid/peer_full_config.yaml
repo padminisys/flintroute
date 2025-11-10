@@ -1,0 +1,15 @@
+name: Full Configuration Peer
+ip_address: 192.168.3.100
+asn: 65001
+remote_asn: 65006
+description: BGP peer with complete configuration
+enabled: true
+password: full_config_secret
+multihop: 2
+update_source: 192.168.3.1
+route_map_in: FULL_IMPORT
+route_map_out: FULL_EXPORT
+prefix_list_in: FULL_PREFIX_IN
+prefix_list_out: FULL_PREFIX_OUT
+max_prefixes: 5000
+local_preference: 200

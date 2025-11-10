@@ -1,0 +1,8 @@
+peer_id: 1
+state: Established
+uptime: 3600
+prefixes_received: 150
+prefixes_sent: 75
+messages_received: 1200
+messages_sent: 1100
+last_error: ""

@@ -1,0 +1,21 @@
+server:
+  host: 127.0.0.1
+  port: 0  # Random available port
+  
+database:
+  path: ./tmp/test.db
+  
+frr:
+  grpc_host: localhost
+  grpc_port: 50051
+  
+auth:
+  jwt_secret: test-secret-key-for-functional-testing
+  token_expiry: 5m
+  refresh_expiry: 1h
+
+testing:
+  timeout: 30s
+  cleanup_on_success: false
+  log_level: debug
+  parallel: false

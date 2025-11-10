@@ -1,0 +1,8 @@
+peer_id: 5
+state: OpenSent
+uptime: 15
+prefixes_received: 0
+prefixes_sent: 0
+messages_received: 10
+messages_sent: 8
+last_error: ""

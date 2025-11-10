@@ -1,0 +1,6 @@
+name: Disabled Peer
+ip_address: 192.168.4.100
+asn: 65001
+remote_asn: 65007
+description: Disabled BGP peer
+enabled: false

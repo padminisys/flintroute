@@ -1,0 +1,62 @@
+# Test artifacts
+logs/*.log
+logs/*.log.*
+results/*.json
+results/*.xml
+results/*.html
+results/coverage.*
+tmp/*.db
+tmp/*.db-shm
+tmp/*.db-wal
+tmp/*.tmp
+tmp/*.cache
+tmp/*.lock
+
+# Build artifacts
+cmd/mock-frr-server/mock-frr-server
+cmd/*/mock-*
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+coverage.txt
+coverage.html
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Temporary test data
+tmp/state-dump-*.json
+tmp/test-*.db*

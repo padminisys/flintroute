@@ -1,0 +1,5 @@
+username: testuser
+password: testpass123
+email: testuser@flintroute.local
+role: user
+active: true

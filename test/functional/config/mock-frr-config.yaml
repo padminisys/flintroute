@@ -1,0 +1,11 @@
+server:
+  host: localhost
+  port: 50051
+  
+simulation:
+  session_state_delay: 100ms
+  error_injection: false
+  
+logging:
+  level: info
+  file: ./logs/mock-frr-server.log

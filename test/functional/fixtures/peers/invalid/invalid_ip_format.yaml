@@ -1,0 +1,6 @@
+name: Invalid Peer - Bad IP
+ip_address: 999.999.999.999
+asn: 65001
+remote_asn: 65002
+description: Peer with invalid IP format
+enabled: true

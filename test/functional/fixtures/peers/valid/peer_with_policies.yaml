@@ -1,0 +1,12 @@
+name: Policy-Based Peer
+ip_address: 192.168.2.100
+asn: 65001
+remote_asn: 65005
+description: BGP peer with routing policies
+enabled: true
+route_map_in: IMPORT_POLICY
+route_map_out: EXPORT_POLICY
+prefix_list_in: PREFIX_IN
+prefix_list_out: PREFIX_OUT
+max_prefixes: 1000
+local_preference: 150

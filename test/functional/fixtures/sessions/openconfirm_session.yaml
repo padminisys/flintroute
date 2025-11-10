@@ -1,0 +1,8 @@
+peer_id: 6
+state: OpenConfirm
+uptime: 20
+prefixes_received: 0
+prefixes_sent: 0
+messages_received: 15
+messages_sent: 12
+last_error: ""

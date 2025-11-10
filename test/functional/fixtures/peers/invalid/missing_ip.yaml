@@ -1,0 +1,5 @@
+name: Invalid Peer - No IP
+asn: 65001
+remote_asn: 65002
+description: Peer without IP address
+enabled: true

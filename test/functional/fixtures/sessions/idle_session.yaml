@@ -1,0 +1,8 @@
+peer_id: 2
+state: Idle
+uptime: 0
+prefixes_received: 0
+prefixes_sent: 0
+messages_received: 0
+messages_sent: 0
+last_error: "Connection refused"

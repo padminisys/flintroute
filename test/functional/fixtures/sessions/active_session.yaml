@@ -1,0 +1,8 @@
+peer_id: 3
+state: Active
+uptime: 10
+prefixes_received: 0
+prefixes_sent: 0
+messages_received: 5
+messages_sent: 3
+last_error: ""

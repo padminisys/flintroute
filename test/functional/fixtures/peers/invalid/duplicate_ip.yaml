@@ -1,0 +1,6 @@
+name: Duplicate IP Peer
+ip_address: 192.168.1.100
+asn: 65001
+remote_asn: 65008
+description: Peer with duplicate IP address
+enabled: true
